@@ -1,11 +1,15 @@
 # import json
 from flask import Flask, jsonify  # , request, render_template, redirect
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 
 employees = [{'id': 1, 'name': 'Ashley'},
              {'id': 2, 'name': 'Kate'},
              {'id': 3, 'name': 'Joe'}]
+
+things = [{'id': 1, 'name': 'Banana'},
+          {'id': 2, 'name': 'Apple'},
+          {'id': 3, 'name': 'Pear'}]
 
 
 @app.route('/employees', methods=['GET'])
@@ -13,9 +17,9 @@ def get_employees():
     return jsonify(employees)  # TODO return list
 
 
-@app.route('/ai', methods=['GET'])
-def ai():
-    return jsonify(employees)  # TODO (simple example from ai model)
+@app.route('/', methods=['GET'])
+def ai_output():
+    return "Hello, I am your AI."  # TODO (simple example from ai model)
 
 
 if __name__ == '__main__':
