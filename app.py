@@ -17,7 +17,7 @@ def get_employees():
     return jsonify(employees)  # TODO return list
 
 
-@app.route('/', methods=['GET'])
+@app.route('/ai', methods=['GET'])
 def ai_output():
     return "Hello, I am your AI."  # TODO (simple example from ai model)
 
